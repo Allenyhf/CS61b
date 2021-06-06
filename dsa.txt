@@ -5,5 +5,4 @@ list
 tree
 priority queue
 graph
-sorting
-searching
+
