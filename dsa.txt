@@ -1,0 +1,8 @@
+
+
+array
+list
+tree
+priority queue
+graph
+
