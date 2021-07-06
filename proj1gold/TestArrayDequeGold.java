@@ -25,8 +25,7 @@ public class TestArrayDequeGold {
 //                } else
                 int studentSize = studentADeque.size();
                 int solutionSize = solutionADeque.size();
-                assertEquals("size(),  student was be: " + studentSize +
-                                " correct was: " + solutionSize,
+                assertEquals("size()\n",
                                 studentSize, solutionSize);
 
                 if (studentADeque.size() != 0) {
@@ -42,15 +41,13 @@ public class TestArrayDequeGold {
                     } else {
                         tmpSolution = null;
                     }
-                        assertEquals("removeFirst(), student was " + tmpStudent
-                                    + " correct was " + tmpSolution,
+                        assertEquals("removeFirst()\n",
                             tmpSolution, tmpStudent);
                 }
             } else {
                 int studentSize = studentADeque.size();
                 int solutionSize = solutionADeque.size();
-                assertEquals("size(),  student was be: " + studentSize +
-                                " correct was: " + solutionSize,
+                assertEquals("size()\n",
                         studentSize, solutionSize);
 
                 if (studentADeque.size() != 0) {
@@ -67,8 +64,7 @@ public class TestArrayDequeGold {
                     } else {
                         tmpSolution = null;
                     }
-                    assertEquals("removeLast(), student was " + tmpStudent
-                                    + " correct was " + tmpSolution,
+                    assertEquals("removeLast()\n",
                             tmpSolution, tmpStudent);
                 }
 
