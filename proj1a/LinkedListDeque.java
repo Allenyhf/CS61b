@@ -1,18 +1,18 @@
 
-public class LinkedListDeque<ItemType> {
+public class LinkedListDeque<T> {
 
-    public class Node{
-        private ItemType item;
+    public class Node {
+        private T item;
         Node next;
         Node prev;
 
-        public Node (ItemType t, Node p, Node n){
+        public Node (T t, Node p, Node n) {
             item = t;
             prev = p;
             next = n;
         }
 
-        public Node(){
+        public Node() {
             item = null;
         }
 
@@ -21,7 +21,7 @@ public class LinkedListDeque<ItemType> {
 //            prev = p;
 //            next = n;
 //        }
-        public ItemType get(){
+        public T get() {
             return item;
         }
     }
@@ -30,7 +30,7 @@ public class LinkedListDeque<ItemType> {
     private int size;
 
 
-    public void addFirst(ItemType item){
+    public void addFirst(T item) {
         /** not looping or recursion
          *  must be O(1) run time **/
 
@@ -40,7 +40,7 @@ public class LinkedListDeque<ItemType> {
         size += 1;
     }
 
-    public void addLast(ItemType item){
+    public void addLast(T item) {
         /** not looping or recursion
         *  must be O(1) run time **/
 
@@ -50,19 +50,19 @@ public class LinkedListDeque<ItemType> {
         size += 1;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return (sentinel.prev == sentinel);
     }
 
-    public int size(){
+    public int size() {
         /** O(1) run time **/
         return size;
     }
 
-    public void printDeque(){
+    public void printDeque() {
         Node ptr = sentinel;
 
-        while(ptr.next != sentinel){
+        while (ptr.next != sentinel) {
             System.out.print(ptr.next.item);
             System.out.print(" ");
             ptr = ptr.next;
@@ -70,11 +70,11 @@ public class LinkedListDeque<ItemType> {
         System.out.println();
     }
 
-    public ItemType removeFirst(){
+    public T removeFirst() {
         /** not looping or recursion
         *  must be O(1) run time **/
 
-        if(size == 0){
+        if (size == 0) {
             System.out.println("LinkedListDeque is empty!");
             //return sentinel.item; //return random T
             return null;
@@ -88,10 +88,10 @@ public class LinkedListDeque<ItemType> {
         return tmp.get();
     }
 
-    public ItemType removeLast(){
+    public T removeLast() {
         /** not looping or recursion
          *  must be O(1) run time **/
-        if(size == 0){
+        if (size == 0) {
             System.out.println("LinkedListDeque is empty!");
             //return (new Node(null, null )).item; //return random T
             return null;
@@ -105,31 +105,31 @@ public class LinkedListDeque<ItemType> {
         return tmp.get();
     }
 
-    public ItemType get(int index){
+    public T get(int index) {
         /* use iteration not recursion */
-        if(index >= size){
+        if (index >= size) {
             System.out.println("LinkedListDeque is empty!");
             return sentinel.get(); //return random T
         }
 
         int cnt = 0;
         Node ptr = sentinel.next;
-        while(/*ptr != sentinel &&*/ cnt < index){
+        while (/*ptr != sentinel &&*/ cnt < index) {
             ptr = ptr.next;
-            cnt ++;
+            cnt++;
         }
         return ptr.get();
     }
 
-    public LinkedListDeque(){
+    public LinkedListDeque() {
         sentinel = new Node();
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
         size = 0;
     }
 
-    public ItemType getRecursive(int index){
-        if(index >= size){
+    public T getRecursive(int index) {
+        if (index >= size) {
             System.out.println("LinkedListDeque is empty!");
 //            return sentinel.item; //return random T
             return null;
@@ -138,7 +138,7 @@ public class LinkedListDeque<ItemType> {
         return getNodeRecursive(sentinel.next, index);
     }
 
-    private ItemType getNodeRecursive(Node start, int index){
+    private T getNodeRecursive(Node start, int index) {
         if(index == 0)
             return start.get();
         return getNodeRecursive(start.next, index - 1);
