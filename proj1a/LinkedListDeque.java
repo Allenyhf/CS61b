@@ -6,7 +6,7 @@ public class LinkedListDeque<T> {
         private Node next;
         private Node prev;
 
-        public Node (T t, Node p, Node n) {
+        public Node(T t, Node p, Node n) {
             item = t;
             prev = p;
             next = n;
@@ -139,7 +139,7 @@ public class LinkedListDeque<T> {
     }
 
     private T getNodeRecursive(Node start, int index) {
-        if(index == 0)
+        if (index == 0)
             return start.get();
         return getNodeRecursive(start.next, index - 1);
     }

@@ -18,7 +18,7 @@ public class ArrayDeque<T> {
         T[] arr2 = (T[]) new Object[cap];
         //int start = (nextFirst == capacity-1) ? 0 : nextFirst+1;
         //int start = (nextFirst + 1) % capacity;
-        int start = get_start();
+        int start = get_Start();
         int sz = 0;
         while (sz < size) {
             arr2[sz] = arr[start];
@@ -31,7 +31,7 @@ public class ArrayDeque<T> {
         arr = arr2;
     }
 
-    private boolean isFull(){
+    private boolean isFull() {
         return size == capacity;
     }
 
@@ -76,7 +76,7 @@ public class ArrayDeque<T> {
         return size;
     }
 
-    private int get_start() {
+    private int get_Start() {
          return (nextFirst + 1) % capacity;
     }
 
@@ -90,7 +90,7 @@ public class ArrayDeque<T> {
 //            start = nextFirst + 1;
 //        }
 
-        start = get_start();
+        start = get_Start();
         int sz = 0;
         while (sz < size) {
             System.out.print(arr[start] + " ");
@@ -113,7 +113,7 @@ public class ArrayDeque<T> {
         }
         //int first = (nextFirst==capacity-1) ? 0: nextFirst + 1;
 //        int first = (nextFirst + 1) % capacity;
-        int first = get_start();
+        int first = get_Start();
         T tmp = arr[first];
         arr[first] = null;
         size -= 1;
@@ -129,7 +129,7 @@ public class ArrayDeque<T> {
         if (size() == 0) {
             return null;
         }
-        int last = (nextLast==0) ? capacity-1: nextLast - 1;
+        int last = (nextLast == 0) ? capacity - 1 : nextLast - 1;
         T tmp = arr[last];
         arr[last] = null;
         size -= 1;
@@ -143,7 +143,7 @@ public class ArrayDeque<T> {
 
     public T get(int index) {
 //        int start = (nextFirst + 1) % capacity;
-        int start = get_start();
+        int start = get_Start();
         int pos = (start + index) % capacity;
         return arr[pos];
     }
