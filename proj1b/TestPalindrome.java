@@ -18,7 +18,7 @@ public class TestPalindrome {
 
 
     @Test
-    public void test_isPalindrome() {
+    public void testisPalindrome() {
         boolean actual;
         actual = palindrome.isPalindrome("");
         assertTrue(actual);
@@ -55,7 +55,7 @@ public class TestPalindrome {
     }
 
     @Test
-    public void TestPalindrome() {
+    public void testPalindrome() {
         CharacterComparator charCom = new OffByOne();
 
         boolean actual;

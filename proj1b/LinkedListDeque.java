@@ -145,8 +145,9 @@ public class LinkedListDeque<T> implements Deque<T> {
     }
 
     private T getNodeRecursive(Node start, int index) {
-        if (index == 0)
+        if (index == 0) {
             return start.get();
+        }
         return getNodeRecursive(start.next, index - 1);
     }
 

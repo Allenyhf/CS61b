@@ -1,7 +1,7 @@
 public class Palindrome {
 
 
-    public Deque<Character> wordToDeque(String word){
+    public Deque<Character> wordToDeque(String word) {
 
         Deque<Character> chaDeq = new ArrayDeque<>();
         int i = 0;
@@ -19,7 +19,7 @@ public class Palindrome {
      * @param chaDeq
      *
      */
-    private boolean do_isPalindrome_recursive(Deque<Character> chaDeq){
+    private boolean do_isPalindrome_recursive(Deque<Character> chaDeq) {
         if (chaDeq.size() <= 1) {
             return true;
         }
@@ -50,7 +50,7 @@ public class Palindrome {
         return result;
     }
 
-    private boolean do_isPalindrome_recursive(Deque<Character> charDeq, CharacterComparator cc){
+    private boolean do_isPalindrome_recursive (Deque<Character> charDeq, CharacterComparator cc) {
         if (charDeq.size() <= 1) {
             return true;
         } else if ( !cc.equalChars(charDeq.removeFirst(), charDeq.removeLast())) {

@@ -8,7 +8,7 @@ public class TestOffByOne {
 
      // Your tests go here.
     @Test
-    public void TestOffByOne() {
+    public void testOffByOne() {
         boolean actual;
        // actual = offByOne.equalChars('a', 'b');
         //assertTrue(actual);
@@ -20,6 +20,9 @@ public class TestOffByOne {
         actual = offByOne.equalChars('d', 'c');
         assertTrue(actual);
 
+        actual = offByOne.equalChars('e', 'f');
+        assertTrue(actual);
+
         actual = offByOne.equalChars('a', 'e');
         assertFalse(actual);
 
@@ -28,15 +31,19 @@ public class TestOffByOne {
 
         actual = offByOne.equalChars('a', 'a');
         assertFalse(actual);
+
+        actual = offByOne.equalChars('a', 'B');
+        assertFalse(actual);
+
+        actual = offByOne.equalChars('a', 'A');
+        assertFalse(actual);
+
+        actual = offByOne.equalChars('%', '&');
+        assertTrue(actual);
     }
 
-//    public static void main(String args[]){
-//        boolean actual;
-//        // actual = offByOne.equalChars('a', 'b');
-//        //assertTrue(actual);
-//        actual = offByOne.equalChars('a', 'b');
-//        //assertTrue(actual);
-//    }
 
-    //Uncomment this class once you've created your CharacterComparator interface and OffByOne class. **/
+
+    //Uncomment this class once you've created
+    // your CharacterComparator interface and OffByOne class.
 }

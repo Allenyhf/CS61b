@@ -18,7 +18,7 @@ public class ArrayDeque<T> implements Deque<T> {
         T[] arr2 = (T[]) new Object[cap];
         //int start = (nextFirst == capacity-1) ? 0 : nextFirst+1;
         //int start = (nextFirst + 1) % capacity;
-        int start = get_Start();
+        int start = getStart();
         int sz = 0;
         while (sz < size) {
             arr2[sz] = arr[start];
@@ -80,7 +80,7 @@ public class ArrayDeque<T> implements Deque<T> {
         return size;
     }
 
-    private int get_Start() {
+    private int getStart() {
         return (nextFirst + 1) % capacity;
     }
 
@@ -94,7 +94,7 @@ public class ArrayDeque<T> implements Deque<T> {
 //            start = nextFirst + 1;
 //        }
 
-        start = get_Start();
+        start = getStart();
         int sz = 0;
         while (sz < size) {
             System.out.print(arr[start] + " ");
@@ -105,7 +105,7 @@ public class ArrayDeque<T> implements Deque<T> {
 
     }
 
-    private void do_Shrink() {
+    private void doShrink() {
         if (capacity > 16 && size * 4 < capacity && size * 4 > 16) {
             resize(size * 4);
         }
@@ -118,7 +118,7 @@ public class ArrayDeque<T> implements Deque<T> {
         }
         //int first = (nextFirst==capacity-1) ? 0: nextFirst + 1;
 //        int first = (nextFirst + 1) % capacity;
-        int first = get_Start();
+        int first = getStart();
         T tmp = arr[first];
         arr[first] = null;
         size -= 1;
@@ -126,7 +126,7 @@ public class ArrayDeque<T> implements Deque<T> {
 //        if(capacity > 16 && size * 4 < capacity && size * 4 > 16){
 //            resize(size * 4);
 //        }
-        do_Shrink();
+        doShrink();
         return tmp;
     }
 
@@ -143,14 +143,14 @@ public class ArrayDeque<T> implements Deque<T> {
 //        if(capacity > 16 && size * 4 < capacity && size * 4 > 16){
 //            resize(size * 4);
 //        }
-        do_Shrink();
+        doShrink();
         return tmp;
     }
 
     @Override
     public T get(int index) {
 //        int start = (nextFirst + 1) % capacity;
-        int start = get_Start();
+        int start = getStart();
         int pos = (start + index) % capacity;
         return arr[pos];
     }
