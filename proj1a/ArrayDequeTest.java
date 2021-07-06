@@ -12,7 +12,7 @@ public class ArrayDequeTest {
             arrdq.addLast(i);
             i++;
         }
-        assertEquals(true, arrdq.isFull());
+        //assertEquals(true, arrdq.isFull());
         assertEquals(false, arrdq.isEmpty());
 
         i = 0;
@@ -20,7 +20,7 @@ public class ArrayDequeTest {
             arrdq.removeLast();
             i++;
         }
-        assertEquals(false, arrdq.isFull());
+        //assertEquals(false, arrdq.isFull());
         assertEquals(false, arrdq.isEmpty());
         arrdq.removeLast();
         assertEquals(true, arrdq.isEmpty());
@@ -31,11 +31,11 @@ public class ArrayDequeTest {
         // addFirst --> removeFirst
         ArrayDeque<Integer> arrdq = new ArrayDeque<>();
         assertEquals(true, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
+       // assertEquals(false, arrdq.isFull());
 
         arrdq.addFirst(0);
         assertEquals(false, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
+       // assertEquals(false, arrdq.isFull());
 
         // addFirst --> removeFirst
         for (int i = 1; i < 8; i++) {
@@ -49,14 +49,12 @@ public class ArrayDequeTest {
         assertEquals(8, (int) arrdq.size());
 
         assertEquals(false, arrdq.isEmpty());
-        assertEquals(true, arrdq.isFull());
 
 
         for (int k = 0; k < 8;  k++) {
             arrdq.removeFirst();
         }
         assertEquals(true, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
 
     }
 
@@ -65,11 +63,9 @@ public class ArrayDequeTest {
         // addFirst --> removeFirst
         ArrayDeque<Integer> arrdq = new ArrayDeque<>();
         assertEquals(true, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
 
         arrdq.addFirst(0);
         assertEquals(false, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
 
         // addFirst --> removeLast
         for (int i = 1; i < 16; i++) {
@@ -83,14 +79,12 @@ public class ArrayDequeTest {
         assertEquals(16, (int) arrdq.size());
 
         assertEquals(false, arrdq.isEmpty());
-        assertEquals(true, arrdq.isFull());
 
 
         for (int k = 0; k < 16;  k++) {
             arrdq.removeLast();
         }
         assertEquals(true, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
 
     }
 
@@ -99,11 +93,9 @@ public class ArrayDequeTest {
         // addFirst --> removeFirst
         ArrayDeque<Integer> arrdq = new ArrayDeque<>();
         assertEquals(true, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
 
         arrdq.addLast(0);
         assertEquals(false, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
 
         // addLast --> removeFirst
         for (int i = 1; i < 32; i++) {
@@ -117,14 +109,12 @@ public class ArrayDequeTest {
         assertEquals(32, (int) arrdq.size());
 
         assertEquals(false, arrdq.isEmpty());
-        assertEquals(true, arrdq.isFull());
 
 
         for (int k = 0; k < 32;  k++) {
             arrdq.removeFirst();
         }
         assertEquals(true, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
 
     }
 
@@ -133,11 +123,9 @@ public class ArrayDequeTest {
         // addLast --> removeLast
         ArrayDeque<Integer> arrdq = new ArrayDeque<>();
         assertEquals(true, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
 
         arrdq.addLast(0);
         assertEquals(false, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
 
 
         for (int i = 1; i < 32; i++) {
@@ -151,14 +139,12 @@ public class ArrayDequeTest {
         assertEquals(32, (int) arrdq.size());
 
         assertEquals(false, arrdq.isEmpty());
-        assertEquals(true, arrdq.isFull());
 
 
         for (int k = 0; k < 32;  k++) {
             arrdq.removeLast();
         }
         assertEquals(true, arrdq.isEmpty());
-        assertEquals(false, arrdq.isFull());
 
     }
 
@@ -172,9 +158,7 @@ public class ArrayDequeTest {
             arrdq.addLast(i);
         }
 
-        assertEquals(true, arrdq.isFull());
         arrdq.addLast(8);
-        assertEquals(false, arrdq.isFull());
         for (int j = 0; j < arrdq.size(); j++) {
             assertEquals(j, (int) arrdq.get(j));
         }
@@ -215,7 +199,7 @@ public class ArrayDequeTest {
         for (int i = 0; i < 7; i++) {
             assertEquals(i + 12, (int) arrdq.get(i));
         }
-        assertEquals(arrdq.size() * 4, arrdq.getCapacity());
+       // assertEquals(arrdq.size() * 4, arrdq.getCapacity());
     }
 
 

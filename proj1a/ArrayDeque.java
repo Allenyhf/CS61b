@@ -31,7 +31,7 @@ public class ArrayDeque<T> {
         arr = arr2;
     }
 
-    public boolean isFull(){
+    private boolean isFull(){
         return size == capacity;
     }
 
@@ -68,7 +68,7 @@ public class ArrayDeque<T> {
         return (size == 0);
     }
 
-    public  int getCapacity() {
+    private   int getCapacity() {
         return capacity;
     }
 
@@ -108,6 +108,9 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst() {
+        if (size() == 0) {
+            return null;
+        }
         //int first = (nextFirst==capacity-1) ? 0: nextFirst + 1;
 //        int first = (nextFirst + 1) % capacity;
         int first = get_start();
@@ -123,6 +126,9 @@ public class ArrayDeque<T> {
     }
 
     public T removeLast() {
+        if (size() == 0) {
+            return null;
+        }
         int last = (nextLast==0) ? capacity-1: nextLast - 1;
         T tmp = arr[last];
         arr[last] = null;
