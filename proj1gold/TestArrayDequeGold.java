@@ -30,17 +30,19 @@ public class TestArrayDequeGold {
 
                 if (studentADeque.size() != 0) {
                     Integer tmpStudent;
-                    if (studentADeque.size() > 0) {
-                        tmpStudent = studentADeque.removeFirst();
-                    } else {
-                        tmpStudent = null;
-                    }
+                    tmpStudent = studentADeque.removeFirst();
+//                    if (studentADeque.size() > 0) {
+//                        tmpStudent = studentADeque.removeFirst();
+//                    } else {
+//                        tmpStudent = null;
+//                    }
                     Integer tmpSolution;
-                    if (solutionADeque.size() > 0) {
-                        tmpSolution = solutionADeque.removeFirst();
-                    } else {
-                        tmpSolution = null;
-                    }
+                    tmpSolution = solutionADeque.removeFirst();
+//                    if (solutionADeque.size() > 0) {
+//                        tmpSolution = solutionADeque.removeFirst();
+//                    } else {
+//                        tmpSolution = null;
+//                    }
                         assertEquals("removeFirst()\n",
                             tmpSolution, tmpStudent);
                 }
@@ -53,17 +55,19 @@ public class TestArrayDequeGold {
                 if (studentADeque.size() != 0) {
 
                     Integer tmpStudent;
-                    if (studentADeque.size() > 0) {
-                        tmpStudent = studentADeque.removeLast();
-                    } else {
-                        tmpStudent = null;
-                    }
+                    tmpStudent = studentADeque.removeLast();
+//                    if (studentADeque.size() > 0) {
+//                        tmpStudent = studentADeque.removeLast();
+//                    } else {
+//                        tmpStudent = null;
+//                    }
                     Integer tmpSolution;
-                    if (solutionADeque.size() > 0) {
-                        tmpSolution = solutionADeque.removeLast();
-                    } else {
-                        tmpSolution = null;
-                    }
+                    tmpSolution = solutionADeque.removeLast();
+//                    if (solutionADeque.size() > 0) {
+//                        tmpSolution = solutionADeque.removeLast();
+//                    } else {
+//                        tmpSolution = null;
+//                    }
                     assertEquals("removeLast()\n",
                             tmpSolution, tmpStudent);
                 }
