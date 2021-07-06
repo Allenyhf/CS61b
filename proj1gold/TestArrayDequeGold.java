@@ -8,7 +8,7 @@ public class TestArrayDequeGold {
         StudentArrayDeque<Integer> studentADeque = new StudentArrayDeque<>();
         ArrayDequeSolution<Integer> solutionADeque = new ArrayDequeSolution<>();
 
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 500; i++) {
             double randomNumberzero2one = StdRandom.uniform();
             if (randomNumberzero2one < 0.25) {
                 studentADeque.addFirst(i);
@@ -23,32 +23,51 @@ public class TestArrayDequeGold {
 //                    System.out.println("but it is: " + studentADeque.size());
 //                    break;
 //                } else
-//                int studentSize = studentADeque.size();
-//                int solutionSize = solutionADeque.size();
-//                assertEquals("Your solution isn't correct\n" +
-//                                "The size should be: " + solutionSize +
-//                                " but it is: " + studentSize,
-//                                studentSize, solutionSize);
+                int studentSize = studentADeque.size();
+                int solutionSize = solutionADeque.size();
+                assertEquals("size(),  student was be: " + studentSize +
+                                " correct was: " + solutionSize,
+                                studentSize, solutionSize);
 
                 if (studentADeque.size() != 0) {
-                   Integer tmpStudent =  studentADeque.removeFirst();
-                   Integer tmpSolution = solutionADeque.removeFirst();
-                   assertEquals("removeFirst(), studen was " + tmpStudent
+                    Integer tmpStudent;
+                    if (studentADeque.size() > 0) {
+                        tmpStudent = studentADeque.removeFirst();
+                    } else {
+                        tmpStudent = null;
+                    }
+                    Integer tmpSolution;
+                    if (solutionADeque.size() > 0) {
+                        tmpSolution = solutionADeque.removeFirst();
+                    } else {
+                        tmpSolution = null;
+                    }
+                        assertEquals("removeFirst(), student was " + tmpStudent
                                     + " correct was " + tmpSolution,
                             tmpSolution, tmpStudent);
                 }
             } else {
-//                int studentSize = studentADeque.size();
-//                int solutionSize = solutionADeque.size();
-//                assertEquals("Your solution isn't correct\n" +
-//                                "The size should be: " + solutionSize +
-//                                " but it is: " + studentSize,
-//                        studentSize, solutionSize);
+                int studentSize = studentADeque.size();
+                int solutionSize = solutionADeque.size();
+                assertEquals("size(),  student was be: " + studentSize +
+                                " correct was: " + solutionSize,
+                        studentSize, solutionSize);
 
                 if (studentADeque.size() != 0) {
-                    Integer tmpStudent =  studentADeque.removeLast();
-                    Integer tmpSolution = solutionADeque.removeLast();
-                    assertEquals("removeLast(), studen was " + tmpStudent
+
+                    Integer tmpStudent;
+                    if (studentADeque.size() > 0) {
+                        tmpStudent = studentADeque.removeLast();
+                    } else {
+                        tmpStudent = null;
+                    }
+                    Integer tmpSolution;
+                    if (solutionADeque.size() > 0) {
+                        tmpSolution = solutionADeque.removeLast();
+                    } else {
+                        tmpSolution = null;
+                    }
+                    assertEquals("removeLast(), student was " + tmpStudent
                                     + " correct was " + tmpSolution,
                             tmpSolution, tmpStudent);
                 }
