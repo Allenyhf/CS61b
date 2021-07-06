@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 public class TestOffByN {
 
     @Test
-    public void testOffbyN(){
+    public void testOffbyN() {
         OffByN offBy5 = new OffByN(5);
         boolean actual = offBy5.equalChars('a', 'f');
         assertTrue(actual);
@@ -20,7 +20,7 @@ public class TestOffByN {
         assertTrue(actual);
 
         actual = offBy0.equalChars('a', 'b');
-        assertTrue(actual);
+        assertFalse(actual);
     }
 
 }

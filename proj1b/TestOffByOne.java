@@ -8,7 +8,7 @@ public class TestOffByOne {
 
      // Your tests go here.
     @Test
-    public void TestOffByOne(){
+    public void TestOffByOne() {
         boolean actual;
        // actual = offByOne.equalChars('a', 'b');
         //assertTrue(actual);
