@@ -11,11 +11,11 @@ public class IntList {
     /**
      * First element of list.
      */
-    public int first;
+    private int first;
     /**
      * Remaining elements of list.
      */
-    public IntList rest;
+    private IntList rest;
 
     /**
      * A List with first FIRST0 and rest REST0.
@@ -81,14 +81,13 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        if(A == null)
+        if (A == null) {
             return B;
-        else if(B == null)
+        } else if (B == null) {
             return A;
-
+        }
         IntList p = A;
-        while(p.rest != null){
+        while (p.rest != null) {
             p = p.rest;
         }
         p.rest = B;
@@ -100,18 +99,16 @@ public class IntList {
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        if(A == null && B == null)
+        if (A == null && B == null) {
             return null;
+        }
         IntList tmp;
-        if(A == null){
-             tmp = new IntList(B.first, catenate(null, B.rest));
-
-        }else if(B == null){
-             tmp = new IntList(A.first, catenate(A.rest, null));
-
-        }else{
-             tmp = new IntList(A.first, catenate(A.rest, B));
+        if (A == null) {
+            tmp = new IntList(B.first, catenate(null, B.rest));
+        } else if (B == null) {
+            tmp = new IntList(A.first, catenate(A.rest, null));
+        } else {
+            tmp = new IntList(A.first, catenate(A.rest, B));
         }
         return tmp;
     }
@@ -132,13 +129,13 @@ public class IntList {
         }
 
         IntList rawEnd = A;
-        while(rawEnd.rest != null) {
+        while (rawEnd.rest != null) {
             rawEnd = rawEnd.rest;
         }
         IntList ptr = A;
         IntList prev = null;
         IntList tmp = null;
-        while(ptr != null){
+        while (ptr != null) {
             tmp = ptr.rest;
             ptr.rest = prev;
             prev = ptr;
