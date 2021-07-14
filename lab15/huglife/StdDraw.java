@@ -148,7 +148,9 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
 
 
     // static initializer
-    static { init(); }
+    static {
+        init();
+    }
 
     /**
      * Set the window size to the default size 512-by-512 pixels.
