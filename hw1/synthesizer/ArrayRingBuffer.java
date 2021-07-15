@@ -2,7 +2,7 @@
 package synthesizer;
 import java.util.Iterator;
 
-public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>{
+public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     /* Index for the next dequeue or peek. */
     private int first;
     /* Index for the next enqueue. */
@@ -23,7 +23,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>{
         //       here shadows the field we inherit from AbstractBoundedQueue, so
         //       you'll need to use this.capacity to set the capacity.
         this.capacity = capacity;
-        rb =(T[]) new Object[capacity];
+        rb = (T[]) new Object[capacity];
         first = 0;
         last = 0;
         fillCount = 0;
@@ -69,6 +69,9 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>{
     @Override
     public T peek() {
         // Return the first item. None of your instance variables should change.
+        if (fillCount == 0) {
+            throw new RuntimeException("Ring Buffer underflow");
+        }
         return rb[first];
     }
     /**
@@ -92,7 +95,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>{
     // When you get to part 5, implement the needed code to support iteration.
 
     public Iterator<T> iterator() {
-        return new ARBIterator<T>();
+        return new ARBIterator<T> ();
     }
 
     private class ARBIterator<T> implements Iterator<T>{
@@ -136,7 +139,7 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>{
             }
             ele1 = rb[ptr];
             ptr = (ptr + 1) % capacity;
-            if (! ele2.equals(ele1)) {
+            if (!ele2.equals(ele1)) {
                 return false;
             }
         }

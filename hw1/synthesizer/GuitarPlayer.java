@@ -2,18 +2,18 @@ package synthesizer;
 
 
 import edu.princeton.cs.algs4.StdAudio;
-        import synthesizer.GuitarString;
+import synthesizer.GuitarString;
 
-        import javax.sound.midi.InvalidMidiDataException;
-        import javax.sound.midi.MetaMessage;
-        import javax.sound.midi.MidiEvent;
-        import javax.sound.midi.MidiMessage;
-        import javax.sound.midi.MidiSystem;
-        import javax.sound.midi.Sequence;
-        import javax.sound.midi.Track;
-        import java.io.File;
-        import java.io.IOException;
-        import java.io.InputStream;
+import javax.sound.midi.InvalidMidiDataException;
+import javax.sound.midi.MetaMessage;
+import javax.sound.midi.MidiEvent;
+import javax.sound.midi.MidiMessage;
+import javax.sound.midi.MidiSystem;
+import javax.sound.midi.Sequence;
+import javax.sound.midi.Track;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Plays guitar from MIDI files.
